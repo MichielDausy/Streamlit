@@ -18,20 +18,23 @@ number2 = st.text_input("Enter the second word:") #GO
 result = st.text_input("Enter the result:") #OUT
 variables = tuple(set(number1+number2+result)) #TOGU
 
+# %%
+with st.form(key='my_form_to_submit'):
+    submit_button = st.form_submit_button(label='Submit')
+
 # %% [markdown]
 # I then set the possible values for all the characters that the user entered where the first character of number 1, 2 and result cannot be 0
 # 
 # The other chracters can be a number from 0 to 10
 
 # %%
-if len(number1) > 0 and len(number2) > 0 and len(result) > 0:
+#if len(number1) > 0 and len(number2) > 0 and len(result) > 0:
+if submit_button:
         domains = {
                 number1[0]: list(range(1, 10)),
                 number2[0]: list(range(1, 10)),
                 result[0]: list(range(1, 10)),
         }
-else:
-        domains = {}
 
 # %% [markdown]
 # The other characters aren't added to the domain dictionary yet
@@ -39,9 +42,10 @@ else:
 # To do this I use a for loop to dynamically add the possible values to a character which are the numbers 0 through 10
 
 # %%
-for variable in variables:
-    if variable not in domains:
-        domains[variable] = list(range(0, 10))
+if submit_button:
+    for variable in variables:
+        if variable not in domains:
+            domains[variable] = list(range(0, 10))
 
 # %% [markdown]
 # Here I add a constraint to add the 2 words together
@@ -69,7 +73,8 @@ constraints = [
 ]
 
 # %%
-if len(number1) > 0 and len(number2) > 0 and len(result) > 0:
+#if len(number1) > 0 and len(number2) > 0 and len(result) > 0:
+if submit_button:
     problem = CspProblem(variables, domains, constraints)
     output = backtrack(problem)
     print('\nSolutions:', output)
@@ -77,16 +82,41 @@ else:
     output = None
     print('No solution')
 
-# %%
-if output is not None:
-    for variable, value in output.items():
-        st.write(f"{variable} = {value}", end="\t")
-    st.write(number1, "\n")
-    st.write("+", number2, "\n")
-    st.write(result, "\n")
-    for variable in variables:
-         st.write(f"{output[variable]}", end="\t")
+# %% [markdown]
+# Compute the number of columns necessary
 
+# %%
+if submit_button:
+    n_col = len(result) + 1
+    cols = st.columns(n_col)
+    rows = 3
+
+# %%
+letters = []
+numbers = []
+if output is not None:
+    for letter, number in output.items():
+        letters.append(letter)
+        numbers.append(str(number)) #ik maak een string van de nummers zodat de spacing in de output overeenkomt met de letters
+    st.text(letters)
+    st.text(numbers)
+    #---------------------------------
+    st.write(number1)
+    st.write("&plus;", number2)
+    st.write(result)
+    #---------------------------------
+    letters1 = ""
+    letters2 = ""
+    letters3 = ""
+    for letter in number1:
+        letters1 += str(output[letter])
+    for letter in number2:
+        letters2 += str(output[letter])
+    for letter in result:
+        letters3 += str(output[letter])
+    st.write(letters1)
+    st.write("&plus;", letters2)
+    st.write(letters3)
 
 # %% [markdown]
 # ## Generative AI Tools
