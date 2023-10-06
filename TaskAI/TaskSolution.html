@@ -7482,7 +7482,20 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Cryptarithmetic-Puzzle">Cryptarithmetic Puzzle<a class="anchor-link" href="#Cryptarithmetic-Puzzle">¶</a></h2><p>First I import the neccesary libraries to complete this task</p>
+<h2 id="Cryptarithmetic-Puzzle">Cryptarithmetic Puzzle<a class="anchor-link" href="#Cryptarithmetic-Puzzle">¶</a></h2><p>Een cryptarithmetische puzzel is een soort wiskundige puzzel of woordpuzzel waarbij het doel is een rekenkundige vergelijking te ontcijferen waarbij de cijfers worden weergegeven door letters of symbolen.
+De uitdaging is om de juiste cijfer-naar-letter-toewijzing te vinden die voldoet aan de beperkingen van de vergelijking.
+Deze puzzels worden vaak gebruikt voor recreatieve en educatieve doeleinden en kunnen behoorlijk uitdagend zijn.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Ik importeer eerst de libraries die nodig zijn om de taak te maken.</p>
 </div>
 </div>
 </div>
@@ -7508,8 +7521,19 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The streamlit app asks the user to enter 3 words</p>
-<p>The words are concatenated, placed in a set so there are no duplicate characters and then placed into a tuple</p>
+<p>Eerst heb ik wat opzoekwerk gedaan over hoe ik een input kan vragen in streamlit. Daar heb ik dan snel een oplossing voor gevonden in de streamlit documentatie.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>De streamlit app vraagt aan de gebruiker om 3 woorden in te geven.</p>
+<p>De woorden worden dan geconcateneerd en in een set geplaatst zodat ik een lijst krijg met alle letters die zijn ingegeven. Deze lijst gaat geen dubbele letters bevatten omdat het in een set werd gestoken.</p>
 </div>
 </div>
 </div>
@@ -7524,7 +7548,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">"Enter the first word:"</span><span class="p">)</span> <span class="c1">#TO</span>
 <span class="n">number2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">"Enter the second word:"</span><span class="p">)</span> <span class="c1">#GO</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">"Enter the result:"</span><span class="p">)</span> <span class="c1">#OUT</span>
-<span class="n">variables</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">number1</span><span class="o">+</span><span class="n">number2</span><span class="o">+</span><span class="n">result</span><span class="p">))</span> <span class="c1">#TOGU</span>
+<span class="n">variables</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">number1</span><span class="o">+</span><span class="n">number2</span><span class="o">+</span><span class="n">result</span><span class="p">)</span> <span class="c1">#TOGU</span>
 </pre></div>
 </div>
 </div>
@@ -7537,8 +7561,23 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>I then set the possible values for all the characters that the user entered where the first character of number 1, 2 and result cannot be 0</p>
-<p>The other chracters can be a number from 0 to 10</p>
+<p>Over het algemeen leek de code die ik moest gebruiken sterk op de code die ik in de oefeningen van hoofdstuk 3 had gemaakt.
+Het grootste verschil was om de mogelijkheid te bieden voor de letters zelf te kunnen kiezen en deze niet te hardcoden in dit programma.
+Door dit te doen kwamen er andere problemen tevoorschijn.</p>
+<p>Het grootste probleem was dat ik steeds een index out of range error kreeg bij onderstaande code omdat de gebruiker nog geen input had gegeven bij het opstarten van het programma.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In dit stuk code voorkom ik dat de eerste letter van de ingegeven woorden een 0 is.</p>
+<p>Om foutmeldingen te voorkomen waarin gezegd wordt dat de index van een van deze woorden "out of range" is doordat er nog geen input werd ingevuld door de gebuiker zet ik dit stuk code in een if statement.
+In deze if statement kijk ik of dat alle 3 de inputs werden ingevuld.</p>
 </div>
 </div>
 </div>
@@ -7556,8 +7595,6 @@ a.anchor-link {
                 <span class="n">number2</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span>
                 <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)),</span>
         <span class="p">}</span>
-<span class="k">else</span><span class="p">:</span>
-        <span class="n">domains</span> <span class="o">=</span> <span class="p">{}</span>
 </pre></div>
 </div>
 </div>
@@ -7570,8 +7607,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The other characters aren't added to the domain dictionary yet</p>
-<p>To do this I use a for loop to dynamically add the possible values to a character which are the numbers 0 through 10</p>
+<p>De andere letters zitten nog niet in de domain dictionary om aan te geven welke mogelijke waarden een letter kan hebben.</p>
+<p>Om dit te doen haal ik elke letter uit de variables set en check ik of deze nog niet in de domains dictionary zit.
+Hierna geef ik mee dat deze letters een waarde van 0 t.e.m. 9 kunnen aannemen.</p>
 </div>
 </div>
 </div>
@@ -7583,9 +7621,10 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">variable</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">domains</span><span class="p">:</span>
-        <span class="n">domains</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">number1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">number2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">letter</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">domains</span><span class="p">:</span>
+            <span class="n">domains</span><span class="p">[</span><span class="n">letter</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -7598,7 +7637,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here I add a constraint to add the 2 words together</p>
+<p>Hier schrijf ik 2 functies die gebruikt worden in een Constraint  Satisfaction Problem zodat de cijfers die toegekend worden aan de letters voldoen aan de cryptografische puzzel.</p>
+<p>Deze functie zorgt ervoor dat 1 cijfer zoals '3' niet aan meerdere letters kan toegewezen worden</p>
 </div>
 </div>
 </div>
@@ -7611,21 +7651,68 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">constraint_unique</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">))</span>  <span class="c1"># remove repeated values and count</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Als het script een oplossing vindt waarbij alle letters een cijfer vertegenwoordigen en waarbij de return statement True geeft dan is er een oplossing gevonden.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> <span class="c1">#verwijder dubbele waarden en tel de lengte</span>
 
 <span class="k">def</span> <span class="nf">constraint_add</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">factor1</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="n">factor2</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">number1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">number1</span><span class="p">:</span> <span class="c1">#ga elk character van de string af</span>
+        <span class="c1">#het huidige character wordt hier gebruikt om de index te vinden</span>
+        <span class="c1">#van dat character in de variables set. bv: variables.index('O') == 1</span>
+        
+        <span class="c1">#de index wordt dan gebruikt om de waarde</span>
+        <span class="c1">#dat aan die letter werd gegeven te krijgen. bv: values[1] == 1</span>
+
+        <span class="c1">#uiteindelijk wordt deze waarde omgezet van een integer naar een string</span>
+        <span class="c1">#zodat deze toegevoegd kan aan de string factor1 zonder dat de integers worden opgeteld</span>
+        <span class="c1">#bv: '3' + '1' == '31' en niet 3 + 1 == 4</span>
         <span class="n">factor1</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">variables</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)])</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">number2</span><span class="p">:</span>
         <span class="n">factor2</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">variables</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)])</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">variables</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">char</span><span class="p">)])</span>
+        <span class="c1">#de strings moeten naar een integer worden omgezet</span>
+        <span class="c1">#om te kijken of de geassigneerde waardes ervoor zorgen dat factor1 + factor2 == sum</span>
     <span class="k">return</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">factor1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">factor2</span><span class="p">))</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hier geef ik een lijst van constraints mee die in het Constraint  Satisfaction Problem worden meegegeven.</p>
 </div>
 </div>
 </div>
@@ -7638,11 +7725,29 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">constraint_unique</span><span class="p">),</span> <span class="c1">#TOGU</span>
-    <span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">constraint_add</span><span class="p">),</span> <span class="c1">#TOGU</span>
+    <span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">constraint_unique</span><span class="p">),</span> <span class="c1">#variables = TOGU</span>
+    <span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">constraint_add</span><span class="p">),</span> <span class="c1">#variables = TOGU</span>
 <span class="p">]</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Hier wordt weer nagekeken of dat alle inputs zijn ingevuld om een index out of range error te vermijden.</p>
+<p>Er wordt een CspProblem object gemaakt met de constructor 'CspProblem' die 3 waarden gebruikt namelijk:</p>
+<ol>
+<li>De variables - deze bevatten alle unieke letters die werden ingegeven door de gebruiker</li>
+<li>De domains - deze bevat de mogelijke waarden elke letter kan hebben</li>
+<li>De constraints - deze omschrijft aan welke voorwaarde de assignatie van cijfers aan letters moeten voldoen</li>
+</ol>
+<p>Als er nog geen inputs zijn ingegeven dan wordt er 'No solution' afgeprint.</p>
 </div>
 </div>
 </div>
@@ -7679,6 +7784,31 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Om de juiste output te tonen in streamlit heb ik ook veel problemen mee ondervonden.
+Eerst werd alles onder elkaar getoond omdat ik telkens een <code>st.write</code> deed voor elke letter en cijfer.
+Ik heb lang geprobeerd om het mooi in een grid 3X3 te krijgen en deze naast elkaar te tonen maar uiteindelijk is het enkel gelukt om de 'grid' onder elkaar te tonen</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In deze Code cell staat alles om het resultaat te tonen in streamlit.</p>
+<p>Eerst is er een if statement die checkt of er een uitkomst is gevonden zodat er geen 'NoneType' errors voorkomen.</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7687,14 +7817,45 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">variable</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"+"</span><span class="p">,</span> <span class="n">number2</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">variables</span><span class="p">:</span>
-         <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">output</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">letters1</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="n">letters2</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="n">letters3</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="k">if</span> <span class="n">output</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1">#hier worden de letters en cijfers die aan elkaar verbonden zijn</span>
+    <span class="c1">#uit de dictionary gelezen en dan toegevoegd aan de letters en numbers list.</span>
+    <span class="k">for</span> <span class="n">letter</span><span class="p">,</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> 
+        <span class="n">letters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+        <span class="c1">#ik maak een string van de nummers</span>
+        <span class="c1">#zodat de spacing in de output overeenkomt met de letters</span>
+        <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">))</span> 
+    <span class="c1">#de lijsten worden onder elkaar getoond</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="c1">#---------------------------------</span>
+    <span class="c1">#hier worden de ingegeven woorden simpleweg getoond om aan te tonen wat de oorspronkelijke som is</span>
+    <span class="c1">#en zodat je kan makkelijk zien hoe de cijfers overeenkomen met de letters</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">number1</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"&amp;plus;"</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="c1">#---------------------------------</span>
+    <span class="c1">#hier ga ik door elk woord heen door elke letter af te gaan</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">number1</span><span class="p">:</span>
+        <span class="c1">#met deze letter ga ik de value opvragen die eraan is gekoppeld in de output dictionary.</span>
+        <span class="c1">#bv: output = {'T' : 2} dan wordt output['T'] == 2</span>
+
+        <span class="c1">#dit cijfer moet ik nog omzetten naar een string zodat ik deze kan toevoegen</span>
+        <span class="c1">#aan de string letters1</span>
+        <span class="n">letters1</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="n">letter</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">number2</span><span class="p">:</span>
+        <span class="n">letters2</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="n">letter</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="n">letters3</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="n">letter</span><span class="p">])</span>
+        <span class="c1">#hier worden de string getoond op streamlit</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">letters1</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"&amp;plus;"</span><span class="p">,</span> <span class="n">letters2</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">letters3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7707,10 +7868,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Generative-AI-Tools">Generative AI Tools<a class="anchor-link" href="#Generative-AI-Tools">¶</a></h2><h3 id="Prompts-used">Prompts used<a class="anchor-link" href="#Prompts-used">¶</a></h3><p>In python can I loop over a list to creatre a key value pair in a dictionary - BingAI</p>
-<p>In python using the simpleai library explain how the constraints work - BingAI</p>
-<p>in streamlit when assigning a user input to a variable can i assign a default value if the user doesn't enter a value - BingAI</p>
-<p>how do i make a grid in streamlit that grows dynamically with the length of a number where every individual number has its own column - BingAI</p>
+<h2 id="Generative-AI-Tools">Generative AI Tools<a class="anchor-link" href="#Generative-AI-Tools">¶</a></h2><p>Ik heb vooral BingAI gebruikt i.p.v. ChatGPT omdat ik vooral vragen moest stellen over hoe ik de juiste output kan tonen in een streamlit app en
+omdat ChatGPT gelimiteerd was tot September 2021 werden er soms niet de nieuwste functies van streamlit getoond.</p>
+<h3 id="Prompts-used">Prompts used<a class="anchor-link" href="#Prompts-used">¶</a></h3><p>In python can I loop over a list to create a key value pair in a dictionary - BingAI - Bij deze prompt wordt er mooi uitgelegd hoe dit haalbaar is met een voorbeeld.</p>
+<p>In python using the simpleai library explain how the constraints work - BingAI - Hier kan je zien dat de tekst bijna rechtstreeks van de simpleai docs komt en wordt er terug een voorbeeld gegeven.</p>
+<p>in streamlit when assigning a user input to a variable can i assign a default value if the user doesn't enter a value - BingAI - Dit had ik gevraagd om de index out of range error proberen op te lossen. BingAI zegt ook dat dit mogelijk is maar wanneer ik dit toepaste kon ik maar 1 keer het hele programma laten runnen, daarna als ik een woord veranderede in de input velden stopte het programma.</p>
+<p>how do i make a grid in streamlit that grows dynamically with the length of a number where every individual number has its own column - BingAI - Hier stelde het voor om st.beta_columns te gebruiken terwijl dat dit niet meer bestaat, dit is immers st.columns geworden dus de bron die het geraadpleegd heeft is niet de meest recente.</p>
+<p>explain this code:     problem = CspProblem(variables, domains, constraints)
+output = backtrack(problem) - ChatGPT</p>
+<p>explain what a cryptarithmetic puzzle is - ChatGPT - Hier krijg je niet de bronnen te zien omdat het ChatGPT is dus als je niet goed zou weten wat een cryptarithmetic puzzle is dan kan het zijn dat je een foute uitleg aanleerd.</p>
 </div>
 </div>
 </div>
