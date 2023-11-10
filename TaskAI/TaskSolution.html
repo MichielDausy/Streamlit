@@ -7651,7 +7651,7 @@ Hierna geef ik mee dat deze letters een waarde van 0 t.e.m. 9 kunnen aannemen.</
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">constraint_unique</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">))</span> <span class="c1">#verwijder dubbele waarden en tel de lengte</span>
 </pre></div>
 </div>
 </div>
@@ -7676,16 +7676,14 @@ Hierna geef ik mee dat deze letters een waarde van 0 t.e.m. 9 kunnen aannemen.</
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> <span class="c1">#verwijder dubbele waarden en tel de lengte</span>
-
-<span class="k">def</span> <span class="nf">constraint_add</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">constraint_add</span><span class="p">(</span><span class="n">variables</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">factor1</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="n">factor2</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">number1</span><span class="p">:</span> <span class="c1">#ga elk character van de string af</span>
         <span class="c1">#het huidige character wordt hier gebruikt om de index te vinden</span>
         <span class="c1">#van dat character in de variables set. bv: variables.index('O') == 1</span>
-        
+
         <span class="c1">#de index wordt dan gebruikt om de waarde</span>
         <span class="c1">#dat aan die letter werd gegeven te krijgen. bv: values[1] == 1</span>
 
