@@ -339,7 +339,7 @@ import numpy as np
 
 # load updated dataset
 updatedConnect_df = pd.read_csv(
-    "Task/connect-4.data/connect-4-with-column-names.data", sep=","
+    "TaskML/connect-4.data/connect-4-with-column-names.data", sep=","
 )
 
 st.title('ML Algorithm Performance')
